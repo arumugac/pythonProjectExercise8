@@ -1,0 +1,78 @@
+#Variables
+first="Chithtra"
+last="Arumugathasan"
+
+# Print Variables
+print(first, last)
+
+# Example Python script {"Ask your name"}
+========================================================================
+#Variables
+first="Chithtra"
+last="Arumugathasan"
+
+#f string created
+print(f"first name: {first} last name: {last}")
+
+
+# Example Python script {"Tell a Joke"}
+=========================================================================
+
+import colorama
+
+from colorama import Fore, Back, Style
+
+joke = input("What do you get when you cross a snowman with a vampire?")
+input()
+punchline =("FrostBite!")
+print(Back.RED, Fore.BLUE, str(punchline))#Variables
+
+
+# Example Python script {"import sys"}
+=========================================================================
+
+
+#!/usr/bin/python
+
+
+import sys
+argc = len(sys.argv)
+
+if argc > 1:
+    print('Too many Args')
+    print("How did that happen")
+else:
+    where = 'World'
+    print("Hello", where)
+
+print('Goodbye from ' + sys.argv[0])
+
+
+
+def newsub():
+    print("Hi")
+    print("We all live in a")
+    print("Yellow Submarine")
+
+newsub()
+
+
+
+score = int(input("Enter your Score:"))
+if score > 100 or score < 0:
+    print("That is invalid")
+else:
+    if score > 90:
+        print("Your grade is an A*")
+    elif score > 80:
+        print("Your grade is an A")
+    elif score > 70:
+        print("Your grade is an B")
+    elif score > 60:
+        print("Your grade is an C")
+    elif score > 50:
+        print("Your grade is an D")
+    elif score > 40:
+        print("Your grade is an E")
+    else:
+        print("You Failed")
