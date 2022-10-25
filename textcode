@@ -47,7 +47,8 @@ else:
 
 print('Goodbye from ' + sys.argv[0])
 
-
+# Example Python script {"Sub Routine"}
+=========================================================================
 
 def newsub():
     print("Hi")
@@ -56,7 +57,8 @@ def newsub():
 
 newsub()
 
-
+# Example Python script {"If Statement Challenge"}
+=========================================================================
 
 score = int(input("Enter your Score:"))
 if score > 100 or score < 0:
@@ -76,3 +78,54 @@ else:
         print("Your grade is an E")
     else:
         print("You Failed")
+
+# Example Python script {"While loop challenge"}
+=========================================================================
+#Option1
+
+last = 0
+final = "no"
+while last < 10:
+    userin = input("Enter a number above 10:")
+    if userin.isnumeric():
+        last = int(userin)
+    else:print(f"That's not a number")
+
+print(f"Thankyou for entering {last}")
+
+#Option2
+
+valid = "no"
+while valid == "no":
+    userin = input("Enter a number above 10:")
+    if userin.isnumeric():
+        valueCheck = int(userin)
+        if valueCheck < 10:
+            print("That number was less than 10")
+            valid = "no"
+        else:
+            print("Thankyou")
+
+
+import re
+
+password = input("Insert your password:")
+x = True
+while x:
+    if (len(password) < 6 ):
+        break
+    elif not re.search("[a-z]", password):
+        break
+    elif not re.search("[0-9]", password):
+        break
+    elif not re.search("[A-Z]", password):
+        break
+    elif not re.search("[!$#@£%&*_+={}?<>]", password):
+        break
+    else:
+        print("Valid Password")
+        x = False
+        break
+
+if x:
+    print("Not a Valid Password")
