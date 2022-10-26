@@ -162,3 +162,116 @@ if num > 1:
                 break
         else:
             print(number)
+
+
+# Example Python scripts {"Formatting strings"}
+=========================================================================
+
+#Example 1
+
+            planets = {'Mercury': 57.91,
+           'Venus': 108.2,
+           'Earth': 149.597870,
+           'Mars': 227.94
+}
+
+for i, key in enumerate(planets.keys(), 1):
+    print("{:2d} {:<10s} {:06.2f} GM".format(i, key, planets[key]))
+
+print(f"Planets contains {len(planets)} Planets")
+
+#Example 2 - Print functions
+
+text = 'hello'
+
+print(text.capitalize())
+print(text.upper())
+print('<'+text.centre(12)+'>')
+print('<'+text.ljust(12)+'>')
+print('<'+text.rjust(12)+'>')
+print('<'+text.zfill(12)+'>')
+
+#Example 3 - Slicing Strings
+
+names = ["Tom", "Harry", "Jane", "Mary"]
+suffix = ["st", "nd", "rd", "th"]
+
+n = 0
+
+s = f"{str(n+1) + suffix[n]} of {len(names)} is {names[n]}"
+print(s)
+
+text = "The quick brown fox jumps blah"
+print(text[12:15])
+print(text[-7:-1])
+print(text[:-14])
+print(text[-7:])
+
+#Example 4 - Slicing strings
+
+line = 'root::0:0:superuser:/root:/bin/sh'
+item = line.split(':')
+
+item[0] = 'avatar'
+item[4] = 'The Super-user'
+
+line = '>'.join(item)
+
+print(item)
+print(line)
+
+print(line)
+
+# Example Python scripts {"Ordering strings"}
+=========================================================================
+
+#Example 1 - ordering a string of int
+
+mynum = [45,55,34,3,14,5,7]
+
+print(f"min: {min(mynum)}"
+      f" max: {max(mynum)}"
+      f" sum: {sum(mynum)}"
+      f" sum: {sum(mynum)/len(mynum)}")
+
+#Example 2  - ordering a string of dict
+
+mydict = {
+    'fred': 3,
+    'jim': 8,
+    'dave': 42
+}
+
+print(f"Min of mydict {max(mydict)}")
+
+#Example 2  - ordering of objects
+
+a = 4
+b = 6
+a, b = b, a
+print(a,b)
+
+one, two, three = range(3)
+print(one, two, three)
+
+
+
+mytup = 'a', 'b', 'c'
+another = mytup * 4
+
+mylist = list(mytup)
+print(mylist)
+greeting = 'hello'
+print(type(greeting))
+
+
+
+Exercise 11 - modifying a Belgium string
+
+Belgium = 'Belgium,10445852,Brussels,737966,Europe,1830,Euro,Catholicism,Dutch,French,German'
+print(Belgium)
+print(f"{'-' * len(Belgium )}")
+
+items = Belgium.split(",")
+print(':'.join(items))
+print(int(items[1]) + int(items[3]))
