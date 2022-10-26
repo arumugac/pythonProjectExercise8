@@ -106,26 +106,59 @@ while valid == "no":
         else:
             print("Thankyou")
 
+# Example Python script {"Password checker challenge"}
+=========================================================================
 
 import re
 
-password = input("Insert your password:")
-x = True
-while x:
-    if (len(password) < 6 ):
-        break
-    elif not re.search("[a-z]", password):
-        break
-    elif not re.search("[0-9]", password):
-        break
-    elif not re.search("[A-Z]", password):
-        break
-    elif not re.search("[!$#@£%&*_+={}?<>]", password):
-        break
-    else:
-        print("Valid Password")
-        x = False
-        break
+valid = "no"
+while valid == "no":
+    password = input("Insert your password:")
+    if len(password) < 6 or len(password) > 10:
+        valid = "no"
+        print("Enter between 6 to 10 characters")
+    if not re.search("[a-z]", password):
+        valid = "no"
+        print("Enter at least 1 lowercase character")
+    if not re.search("[A-Z]", password):
+        valid = "no"
+        print("Enter at least 1 uppercasr character")
+    if not re.search("[0-9]", password):
+        valid = "no"
+        print("Enter at least 1 numeric character")
+    if not re.search("[!$#@£%&*_+={}?<>]", password):
+        valid = "no"
+        print("Enter at least 1 symbol character")
 
-if x:
-    print("Not a Valid Password")
+    else:
+        valid = "yes"
+        print("Valid Password")
+
+    if valid == "no":
+            print("Not a Valid Password")
+
+# Example Python script {"Prime Number challenge"}
+=========================================================================
+
+#Option1
+
+number = int(input("Please Enter a Number: "))
+if number > 1:
+    for i in range(2, number):
+        if (number % i) == 0:
+            print(number, "is not a prime number")
+            break
+        else:
+            print(number, "is prime a number")
+
+#Option2
+
+num = int(input("Please Enter a Number:"))
+
+if num > 1:
+    for number in range(num):
+        for i in range(2, number):
+            if number % i == 0:
+                break
+        else:
+            print(number)

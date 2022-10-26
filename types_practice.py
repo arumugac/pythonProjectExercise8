@@ -1,23 +1,17 @@
-import re
+num = int(input("Please Enter a Number:"))
 
-password = input("Insert your password:")
-valid = "no"
-while valid == "no":
-    if len(password) < 6:
-        valid = "no"
-    elif not re.search("[a-z]", password):
-        valid = "no"
-    elif not re.search("[0-9]", password):
-        valid = "no"
-    elif not re.search("[A-Z]", password):
-        valid = "no"
-    elif not re.search("[!$#@£%&*_+={}?<>]", password):
-        valid = "no"
+if num > 1:
+    for number in range(num):
+        for i in range(2, number):
+            if number % i == 0:
+                break
+        else:
+            print(number)
 
-    else:
-        valid = "yes"
-        print("Valid Password")
 
-    if valid == "no":
-        print("Not a Valid Password")
-    break
+
+
+
+
+
+
