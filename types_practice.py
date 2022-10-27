@@ -1,31 +1,49 @@
 import random
-
+UserScore = 0
+CompScore = 0
 while True:
-    user_action = input("Enter a choice (rock, paper, scissors): ")
-    possible_actions = ["rock", "paper", "scissors"]
-    computer_action = random.choice(possible_actions)
-    print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
+    user = (input("Shall we play rock, paper,scissors select (y/n):\n "))
+    if user == 'n':
+        break
+    else:
+        if user == 'y':
+            user = input("Enter your choice (rock, paper, scissors):")
+            choices = ["rock", "paper", "scissors"]
+            computer = random.choice(choices)
+        else:
+            if choices == ["0", "0", "0"]:
+                print("Invalid Entry")
 
-    if user_action == computer_action:
-        print(f"Both players selected {user_action}. It's a tie!")
-    elif user_action == "rock":
-        if computer_action == "scissors":
+    print(f"\nYou chose {user}, computer chose {computer}.\n")
+    if user == computer:
+        print(f"Both players selected {user}. It's a tie!")
+        (UserScore): int = 0
+        (CompScore): int = 0
+
+    elif user == "rock":
+        if computer == "scissors":
             print("Rock smashes scissors! You win!")
+            UserScore += 1
         else:
             print("Paper covers rock! You lose.")
-    elif user_action == "paper":
-        if computer_action == "rock":
+            CompScore += 1
+    elif user == "paper":
+        if computer == "rock":
             print("Paper covers rock! You win!")
+            UserScore += 1
         else:
             print("Scissors cuts paper! You lose.")
-    elif user_action == "scissors":
-        if computer_action == "paper":
+            CompScore += 1
+    elif user == "scissors":
+        if computer == "paper":
             print("Scissors cuts paper! You win!")
+            UserScore += 1
         else:
             print("Rock smashes scissors! You lose.")
+            CompScore += 1
+    print(f"Your Score = {UserScore}")
+    print(f"Computer Score = {CompScore}")
 
-    play_again = input("Play again? (y/n): ")
-    if play_again.lower() != "y":
+    repeat = input("Play again? (y/n): ")
+    if repeat.lower() != "y":
         break
-
-
