@@ -293,16 +293,14 @@ while True:
             user = input("Enter your choice (rock, paper, scissors):")
             choices = ["rock", "paper", "scissors"]
             computer = random.choice(choices)
-        # else:
-        #     if not choices:
-        #         print("Invalid Entry")
+            if user not in choices:
+                print("Invalid Entry")
 
     print(f"\nYou chose {user}, computer chose {computer}.\n")
     if user == computer:
         print(f"Both players selected {user}. It's a tie!")
-        (UserScore): int = 0
-        (CompScore): int = 0
-
+        UserScore += 0
+        CompScore += 0
     elif user == "rock":
         if computer == "scissors":
             print("Rock smashes scissors! You win!")
