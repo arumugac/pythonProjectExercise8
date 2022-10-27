@@ -293,16 +293,14 @@ while True:
             user = input("Enter your choice (rock, paper, scissors):")
             choices = ["rock", "paper", "scissors"]
             computer = random.choice(choices)
-        # else:
-        #     if not choices:
-        #         print("Invalid Entry")
+            if user not in choices:
+                print("Invalid Entry")
 
     print(f"\nYou chose {user}, computer chose {computer}.\n")
     if user == computer:
         print(f"Both players selected {user}. It's a tie!")
-        (UserScore): int = 0
-        (CompScore): int = 0
-
+        UserScore += 0
+        CompScore += 0
     elif user == "rock":
         if computer == "scissors":
             print("Rock smashes scissors! You win!")
@@ -330,3 +328,62 @@ while True:
     repeat = input("Play again? (y/n): ")
     if repeat.lower() != "y":
         break
+
+
+# Example Python scripts {"Unpacking tuples"}
+=========================================================================
+
+Option1 - {"Unpacking a tuple"}
+
+mytup = ('eggs', 'bacon', 'sausages', 'beans', 'toast')
+
+x, y, *z = mytup
+print(x, y, z)
+
+Option2 - {"Unpacking multiple tuple"}
+
+t1 = ('cats', 'dogs', 'snakes', 'mice', 'camels')
+t2 = ('kelp', 'crab', 'lobster', 'fish')
+
+for a, *b, c in t1, t2:
+    print(a,b,c)
+
+Option2 - {"Different way to add an item to a tuple"}
+
+myList = ["Liverpool", "Man City", "Arsenal", "Norwich"]
+
+myList[:0] = ["Newcastle", "Palace"]
+myList.append("Leeds")
+myList.extend(["Everton"])
+myList += ["Man U"]
+
+print(myList)
+
+Option3 - {"Different way to pick an item to a tuple"}
+
+myList = ["Liverpool", "Man City", "Arsenal", "Norwich"]
+
+myList[:0] = ["Newcastle", "Palace"]
+myList.insert(2,"Tottenham")
+myList[2:2] = ["Burnley"]
+myList[3] = ["Fulham"]
+print(myList)
+
+Option4 - {"Different way to remove an item to a tuple"}
+
+myList = ["Liverpool", "Man City", "Arsenal", "Norwich"]
+
+myList.pop(1)
+myList.remove("Liverpool")
+print(myList)
+
+
+Option5 - {"Different ways to error handling/catching a tuple"}
+
+myList = ["Liverpool", "Man City", "Arsenal", "Norwich"]
+try:
+    myList.remove("Fulham")
+except:
+    print("That was not in the list")
+print(myList)
+
